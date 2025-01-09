@@ -1,0 +1,25 @@
+openapi: 3.0.1
+info:
+  title: Inditex API prices
+  description: API de inditex para comercio electronico sobre una tabla de precios y productos asociados
+  version: 1.0.0
+
+paths:
+  /price:
+    get:
+      parameters:
+         - $ref './requests/productId'
+         - $ref './requests/brandId'
+         - $ref './requests/aplicationDate'
+      responses:
+         '200':
+           $ref './responses/GetPricesResponse'
+         '400':
+           $ref './responses/400BadRequest'
+         '500':
+           $ref './responses/500InternetSeveralError'
+      operationId: Obtener precio final
+      summary: Obtencion de los datos de la tabla price
+      description: Obtencion de los datos identificador producto, identificador cadena, tarifa a aplicar, 
+                   fechas de aplicacion y precio final a aplicar
+  
