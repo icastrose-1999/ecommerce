@@ -1,0 +1,7 @@
+productId:
+    name: productId
+    in: query
+    description: The product Id
+    required: true
+    schema:
+        type: integer

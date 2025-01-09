@@ -1,0 +1,21 @@
+response:
+    type: object
+    properties:
+        productId:
+            type: integer
+            description: Product Id
+        brandId:
+            type: integer
+            description: Brand Id
+        rateId:
+            type: integer
+            description: Rate Id
+        aplicationDates:
+            type: array
+            items:
+                type: string
+                format: date
+            description: Aplication Dates
+        price:
+            type: integer
+            description: Price

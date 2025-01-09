@@ -1,0 +1,7 @@
+brandId:
+    name: brand Id
+    in: query
+    description: The brand Id
+    required: true
+    schema:
+       type: integer
