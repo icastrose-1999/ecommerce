@@ -27,7 +27,12 @@
 	</properties>
 
 	<dependencies>
-		
+	
+	    <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-web</artifactId>
+    	</dependency>
+
 		<!--LOMBOOK-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -143,7 +148,30 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.openapitools</groupId>
+				<artifactId>openapi-generator-maven-plugin</artifactId>
+				<version>${openapi-generator.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<inputSpec>${project.basedir}/src/main/resources/open-api.yaml</inputSpec>
+							<generatorName>spring</generatorName>
+							<generateSupportingFiles>true</generateSupportingFiles>
+							<modelNameSuffix>DTO</modelNameSuffix>
+							<apiPackage>com.ecommerce.api</apiPackage>
+							<modelPackage>com.ecommerce.model</modelPackage>
+							<configOptions>
+								<useTags>true</useTags>
+								<interfaceOnly>true</interfaceOnly>
+							</configOptions>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
-
 </project>

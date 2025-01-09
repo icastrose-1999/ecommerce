@@ -1,18 +1,14 @@
-components:
-    schemas:
-        ErrorObject:
-            description: Display an error message
-            required:
-                - code
-                - title
-            type: object
-            properties:
-                code:
-                    description: Error code
-                    type: integer
-                title:
-                    description: Error title
-                    type: string
-                detail:
-                    description: Error detail
-                    type: string
+type: object
+required:
+    - code
+    - title
+properties:
+  code:
+      description: Error code
+      type: integer
+  title:
+      description: Error title
+      type: string
+  detail:
+      description: Error detail
+      type: string

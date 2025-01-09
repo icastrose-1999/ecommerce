@@ -1,7 +1,0 @@
-aplicationDate:
-    name: aplicationDate
-    in: query
-    decription: Aplication Date
-    schema:
-        type: string
-        format: date

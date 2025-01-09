@@ -1,0 +1,21 @@
+productId:
+  name: productId
+  in: query
+  description: The product Id
+  required: true
+  schema:
+      type: integer
+brandId:
+  name: brandId
+  in: query
+  description: The brand Id
+  required: true
+  schema:
+     type: integer
+applicationDate:
+  name: applicationDate
+  in: query
+  description: Application Date
+  schema:
+      type: string
+      format: date
