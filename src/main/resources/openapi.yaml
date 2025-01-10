@@ -29,10 +29,10 @@ paths:
         '500':
           description: List of errors
           content: 
-              application/json:
-                schema:
-                  $ref: './responses/errorResponse.yml'
+            application/json:
+              schema:
+                $ref: './responses/errorResponse.yml'
 
-      operationId: Get Final Price
-      summary: Get data form prices table
+      operationId: getFinalPrices
+      summary: Get data from prices table
       description: Retrieves the product ID, brand ID, rate ID, and final price from the prices table based on the provided product ID, brand ID, and application date.

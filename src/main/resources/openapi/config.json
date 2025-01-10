@@ -1,5 +1,0 @@
-{
-  "templateDir": "./src/main/resources/openapi/templates",
-  "javaVersion": "17",
-  "library": "spring-boot"
-}

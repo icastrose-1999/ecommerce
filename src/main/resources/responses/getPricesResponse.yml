@@ -16,5 +16,6 @@ properties:
             format: date
         description: Application Dates
     price:
-        type: integer
+        type: number
+        format: double
         description: Price
