@@ -9,10 +9,12 @@ properties:
     rateId:
         type: integer
         description: Rate Id
-    applicationDate:
-        type: string
-        format: date
-        description: Application Date
+    applicationDates:
+        type: array
+        items:
+            type: string
+            format: date
+        description: Application Dates
     price:
         type: number
         format: double

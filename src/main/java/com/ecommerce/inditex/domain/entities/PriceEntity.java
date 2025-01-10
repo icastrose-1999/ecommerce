@@ -36,7 +36,7 @@ public class PriceEntity {
     /** The priority. */
     private Integer priority;
     
-    /** The application date. */
-    private LocalDate applicationDate;
+    /** The start date. */
+    private LocalDate startDate;
 
 }
