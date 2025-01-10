@@ -24,7 +24,7 @@ public class ExceptionHandlerController {
 	@ExceptionHandler(InvalidRequestException.class)
 	public ResponseEntity<ErrorResponseDTO> handleInvalidRequest(InvalidRequestException ex) {
 		
-		ErrorResponseDTO ErrorResponseDTO = new ErrorResponseDTO().builder()
+		ErrorResponseDTO ErrorResponseDTO = com.ecommerce.model.ErrorResponseDTO.builder()
 				.code( HttpStatus.BAD_REQUEST.value())
 				.title("Invalid Request")
 				.detail(ex.getMessage())
@@ -44,7 +44,8 @@ public class ExceptionHandlerController {
         
     	String detail = String.format("Parameter '%s' should be of type %s", ex.getName(), ex.getRequiredType().getSimpleName());
        
-    	ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO().builder()
+    	new ErrorResponseDTO();
+		ErrorResponseDTO errorResponseDTO = ErrorResponseDTO.builder()
         		.code( HttpStatus.BAD_REQUEST.value())
         		.title("Type Mismatch")
         		.detail(detail)
@@ -62,7 +63,8 @@ public class ExceptionHandlerController {
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<ErrorResponseDTO> handleUnexpectedError(Exception ex) {
 		
-		ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO().builder()
+		new ErrorResponseDTO();
+		ErrorResponseDTO errorResponseDTO = ErrorResponseDTO.builder()
         		.code( HttpStatus.INTERNAL_SERVER_ERROR.value())
         		.title("Internal server error")
         		.detail(ex.getMessage())
