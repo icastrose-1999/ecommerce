@@ -26,5 +26,5 @@ public class PriceDTO {
 	private Integer rateId;
 
 	/** The application date. */
-	private List<LocalDate> applicationDates;
+	private LocalDate applicationDate;
 }
