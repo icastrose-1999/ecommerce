@@ -11,10 +11,13 @@ import lombok.RequiredArgsConstructor;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 /**
  * The Class PriceDomainService.
  */
 @RequiredArgsConstructor
+@Service
 public class PriceDomainService {
 
     /** The price repository. */

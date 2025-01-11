@@ -30,8 +30,8 @@ public class PriceEntity {
     /** The rate id. */
     private Integer rateId;
     
-    /** The price. */
-    private PriceValueObject price;
+    /** The price value object. */
+    private PriceValueObject priceValueObject;
     
     /** The priority. */
     private Integer priority;
