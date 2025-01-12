@@ -1,6 +1,7 @@
 package com.ecommerce.inditex.apirest.controllers;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,7 @@ public class PriceController implements GetPricesApi {
 	private final PriceDomainService priceService;
 	
 	@Override
-	public ResponseEntity<GetPricesResponseDTO> getFinalPrices(Integer productId, Integer brandId, LocalDate applicationDate){
+	public ResponseEntity<GetPricesResponseDTO> getFinalPrices(Integer productId, Integer brandId, OffsetDateTime applicationDate){
 
 			PriceDTO priceDTO = priceService.findFinalPrice(productId, brandId, applicationDate);
             

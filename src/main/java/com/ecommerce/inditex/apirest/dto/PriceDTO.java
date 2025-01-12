@@ -1,9 +1,8 @@
 package com.ecommerce.inditex.apirest.dto;
 
-import java.time.LocalDate;
-import java.util.List;
-
+import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class PriceDTO {
 
 	/** The product id. */
@@ -26,5 +26,5 @@ public class PriceDTO {
 	private Integer rateId;
 
 	/** The application date. */
-	private LocalDate applicationDate;
+	private OffsetDateTime applicationDate;
 }

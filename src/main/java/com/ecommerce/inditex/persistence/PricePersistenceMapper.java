@@ -8,6 +8,7 @@ import com.ecommerce.inditex.domain.entities.PriceEntity;
 import com.ecommerce.inditex.domain.repository.PriceDomainRepository;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
@@ -32,17 +33,17 @@ public interface PricePersistenceMapper extends PriceDomainRepository {
             brandId,
             rateId,
             price,
-            applicationDate,
             priority
         FROM prices
-        WHERE product_id = #{productId}
-          AND brand_id = #{brandId}
+        WHERE (product_id = #{productId} OR #{productId} IS NULL)
+          AND (brand_id = #{brandId} OR #{brandId} IS NULL)
+          AND #{applicationDate} IS NULL
           AND start_date <= #{applicationDate}
           AND end_date >= #{applicationDate}
     """)
     List<PriceEntity> findPriceByCriteria(
         @Param("productId") Integer productId,
         @Param("brandId") Integer brandId,
-        @Param("applicationDate") LocalDate applicationDate
+        @Param("applicationDate") OffsetDateTime applicationDate
     );
 }

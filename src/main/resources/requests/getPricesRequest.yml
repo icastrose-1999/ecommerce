@@ -14,8 +14,9 @@ brandId:
      type: integer
 applicationDate:
   name: applicationDate
+  required: true
   in: query
   description: Application Date
   schema:
       type: string
-      format: date
+      format: date-time

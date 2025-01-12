@@ -1,5 +1,7 @@
 package com.ecommerce.inditex.domain.valueobjects;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Value;
 
 /**
@@ -9,7 +11,7 @@ import lombok.Value;
 public class PriceValueObject {
 
     /** The amount. */
-    double amount;
+    Double amount;
     
     /** The currency. */
     String currency;

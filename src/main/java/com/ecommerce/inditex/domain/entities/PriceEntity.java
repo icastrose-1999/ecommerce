@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 
 import com.ecommerce.inditex.domain.valueobjects.PriceValueObject;
 
@@ -37,6 +38,6 @@ public class PriceEntity {
     private Integer priority;
     
     /** The application date. */
-    private LocalDate applicationDate;
+    private OffsetDateTime applicationDate;
 
 }

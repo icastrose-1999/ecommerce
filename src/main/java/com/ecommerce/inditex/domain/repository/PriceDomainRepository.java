@@ -1,6 +1,7 @@
 package com.ecommerce.inditex.domain.repository;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 import com.ecommerce.inditex.domain.entities.PriceEntity;
@@ -19,6 +20,6 @@ public interface PriceDomainRepository {
      * @param applicationDate the application date
      * @return the list
      */
-    List<PriceEntity> findPriceByCriteria(Integer productId, Integer brandId, LocalDate applicationDate);
+    List<PriceEntity> findPriceByCriteria(Integer productId, Integer brandId, OffsetDateTime applicationDate);
 
 }

@@ -8,7 +8,7 @@ import com.ecommerce.inditex.domain.repository.PriceDomainRepository;
 
 import lombok.RequiredArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -34,15 +34,18 @@ public class PriceDomainService {
      * @param startDate the start date
      * @return the price DTO
      */
-    public PriceDTO findFinalPrice(Integer productId, Integer brandId, LocalDate applicationDate) {
+    public PriceDTO findFinalPrice(Integer productId, Integer brandId, OffsetDateTime applicationDate) {
         validateInputs(productId, brandId, applicationDate);
-
+        
         List<PriceEntity> prices = priceRepository.findPriceByCriteria(productId, brandId, applicationDate);
-
-        return prices.stream()
+        
+        PriceDTO priceDTO = prices.stream()
             .max((p1, p2) -> p1.getPriority().compareTo(p2.getPriority()))
             .map(mapper::toDTO)
             .orElseThrow(() -> new InvalidRequestException("No data found for the provided criteria."));
+               
+        return new PriceDTO(priceDTO.getProductId(), priceDTO.getBrandId(), 
+        		priceDTO.getPrice(), priceDTO.getRateId() , applicationDate);
     }
 
     /**
@@ -52,7 +55,7 @@ public class PriceDomainService {
      * @param brandId   the brand id
      * @param startDate the start date
      */
-    private void validateInputs(Integer productId, Integer brandId, LocalDate applicationDate) {
+    private void validateInputs(Integer productId, Integer brandId, OffsetDateTime applicationDate) {
         if (productId == null || brandId == null || applicationDate == null) {
             throw new InvalidRequestException("Product ID, Brand ID, and Application Date cannot be null.");
         }

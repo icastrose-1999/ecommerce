@@ -11,7 +11,7 @@ properties:
         description: Rate Id
     applicationDate:
         type: string
-        format: date
+        format: date-time
         description: Application Date
     price:
         type: number

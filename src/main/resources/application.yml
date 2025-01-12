@@ -1,6 +1,9 @@
 spring:
   application:
     name: inditex
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss
+    time-zone: UTC
 
   datasource:
     url: jdbc:h2:mem:pricesdb:DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
