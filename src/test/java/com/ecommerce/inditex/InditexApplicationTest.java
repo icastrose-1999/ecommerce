@@ -2,7 +2,7 @@ package com.ecommerce.inditex;
 
 import org.junit.jupiter.api.Test;
 
-class InditexApplicationMainTest {
+class InditexApplicationTest {
 
     /**
      * Test that the main method runs without errors.
