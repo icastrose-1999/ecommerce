@@ -28,16 +28,14 @@ public interface PricePersistenceMapper extends PriceDomainRepository {
      */
     @Select("""
         SELECT 
-            id,
-            productId,
-            brandId,
-            rateId,
+            product_id,
+            brand_id,
+            rate_id,
             price,
             priority
         FROM prices
-        WHERE (product_id = #{productId} OR #{productId} IS NULL)
-          AND (brand_id = #{brandId} OR #{brandId} IS NULL)
-          AND #{applicationDate} IS NULL
+        WHERE (product_id = #{productId})
+          AND (brand_id = #{brandId})
           AND start_date <= #{applicationDate}
           AND end_date >= #{applicationDate}
     """)
