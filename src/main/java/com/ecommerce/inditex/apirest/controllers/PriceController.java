@@ -1,6 +1,5 @@
 package com.ecommerce.inditex.apirest.controllers;
 
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;

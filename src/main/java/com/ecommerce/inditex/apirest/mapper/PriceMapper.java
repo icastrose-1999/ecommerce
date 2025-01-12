@@ -1,7 +1,6 @@
 package com.ecommerce.inditex.apirest.mapper;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 import com.ecommerce.inditex.apirest.dto.PriceDTO;
 import com.ecommerce.inditex.domain.entities.PriceEntity;
@@ -20,6 +19,5 @@ public interface PriceMapper {
      * @param priceEntity the price entity
      * @return the price DTO
      */
-    @Mapping(target = "price", source = "priceValueObject.amount")
     PriceDTO toDTO(PriceEntity priceEntity);
 }

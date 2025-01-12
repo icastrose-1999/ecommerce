@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
-
-import com.ecommerce.inditex.domain.valueobjects.PriceValueObject;
 
 /**
  * PriceEntity represents the domain entity for prices.
@@ -31,8 +28,8 @@ public class PriceEntity {
     /** The rate id. */
     private Integer rateId;
     
-    /** The price value object. */
-    private PriceValueObject priceValueObject;
+    /** The price. */
+    private Double price;
     
     /** The priority. */
     private Integer priority;

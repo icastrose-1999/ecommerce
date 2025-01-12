@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import com.ecommerce.inditex.apirest.dto.PriceDTO;
 import com.ecommerce.inditex.domain.entities.PriceEntity;
-import com.ecommerce.inditex.domain.valueobjects.PriceValueObject;
 
 import java.time.OffsetDateTime;
 
@@ -29,7 +28,7 @@ public class PriceMapperTest {
         PriceEntity priceEntity = PriceEntity.builder()
             .productId(1)
             .brandId(2)
-            .priceValueObject(new PriceValueObject(Double.valueOf("99.99"),"EUR"))
+            .price(Double.valueOf("99.99"))
             .rateId(3)
             .applicationDate(OffsetDateTime.now())
             .build();
@@ -40,7 +39,7 @@ public class PriceMapperTest {
         // THEN
         assertEquals(priceEntity.getProductId(), priceDTO.getProductId());
         assertEquals(priceEntity.getBrandId(), priceDTO.getBrandId());
-        assertEquals(priceEntity.getPriceValueObject().getAmount(), priceDTO.getPrice());
+        assertEquals(priceEntity.getPrice(), priceDTO.getPrice());
         assertEquals(priceEntity.getRateId(), priceDTO.getRateId());
         assertEquals(priceEntity.getApplicationDate(), priceDTO.getApplicationDate());
     }

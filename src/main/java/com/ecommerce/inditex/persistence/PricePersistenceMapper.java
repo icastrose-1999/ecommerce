@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Select;
 import com.ecommerce.inditex.domain.entities.PriceEntity;
 import com.ecommerce.inditex.domain.repository.PriceDomainRepository;
 
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.List;
 
